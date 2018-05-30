@@ -1,1 +1,182 @@
 @import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Nova+Mono');
+
+/* --- GLOBAL --- */
+
+html{
+  min-width: 100%;
+  min-height: 100%;
+  font-family: 'Cutive Mono', monospace;
+  letter-spacing: -0.08em;
+  color: white;
+}
+body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+main{
+  width: 70%;
+  margin: 1em auto;
+}
+#main-nav{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2.5em;
+  background-color: rgba(0,0,0,0.75);
+  border-bottom: 1px solid #204254;
+}
+#main-nav ul li{
+  display: inline-block;
+  list-style: none;
+  padding-left: 1em;
+}
+h1,h2{
+  font-family: 'Nova Mono', monospace !important;
+  color: #FFEF00 !important;
+  margin: 0.5em;
+}
+h1{
+  text-align: center;
+  margin: 1.5em;
+}
+p{
+  margin: 1em;
+}
+a{
+  color: #FFEF00;
+  text-decoration: none;
+  position: relative;
+}
+a:after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: 0.05em solid #FFEF00;
+  transition: 0.5s;
+  -o-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+a:hover:after{
+  width: 100%;
+}
+a:visited{
+  color: #FFEF00;
+}
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2em;
+  width: 10em;
+  border: 0.1em solid black;
+  font-family: 'Nova Mono', monospace;
+  font-size: 1.3em;
+  color: black;
+  letter-spacing: -0.05em;
+  transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -webkit-transition: background-color 0.5s;
+}
+.button:after{
+  border-bottom: none;
+}
+.button:hover{
+  background-color: black;
+  color: #FFEF00 !important;
+  text-decoration: none;
+  border: 0.1em solid black;
+  cursor: pointer;
+}
+
+#footer-nav{
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgba(0,0,0,0.75);
+  margin: 1em auto;
+}
+
+footer ul{
+  list-style: none;
+}
+.social-media li{
+  display: inline-block;
+  padding: 0.7em;
+}
+.fa{
+  font-size: 1.5em !important;
+}
+
+/* --- INDEX PAGE --- */
+#index-bg{
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url('../bg-images/asteroids.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center top;
+  z-index: -999;
+}
+.asteroid-box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30em;
+  height: auto;
+  position: relative;
+  background-color: rgba(255,239,0,0.75);
+  color: black;
+  margin: 0 auto;
+  padding: 1.5em;
+}
+#asteroid-name{
+  color: black !important;
+  text-align: center;
+}
+.learn-more-pos{
+  position: relative;
+  margin: 0.5em auto;
+}
+.hover-circle{
+  display: block;
+  width: 18em;
+  height: 18em;
+  border: 5px solid black;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+.hover-circle span{
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  background: url('../icons/x.svg');
+}
+
+/* --- STYLES FOR TABLET --- */
+@media screen and (max-width: 768px){
+
+  /* CREATE HAMBURGER MENU */
+
+  .asteroid-box{
+    width: 95%;
+  }
+}
+
+/* --- STYLES FOR SMARTPHONE --- */
+@media screen and (max-width: 415px){
+
+
+}

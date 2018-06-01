@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Nova+Mono');
 
+/* COLORS
+yellow: #FFEF00 rgba(255,239,0,1.0)
+light blue: #2B799F rgba(43,127,153,1.0)
+lighter blue: #4BA2CE rgba(75,162,206,1.0)
+dark blue: #204254 rgba(32,66,84,1.0)
+
+*/
+
 /* --- GLOBAL --- */
 
 html{
@@ -17,68 +25,137 @@ body{
   background-color: black;
 }
 main{
-  width: 70%;
-  margin: 1em auto;
+  width: inherit;
 }
-#main-nav{
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 2.5em;
-  background-color: rgba(0,0,0,0.75);
-  border-bottom: 1px solid #204254;
-}
-#main-nav ul li{
-  display: inline-block;
-  list-style: none;
-  padding-left: 1em;
-}
+
 h1,h2{
   font-family: 'Nova Mono', monospace !important;
   color: #FFEF00 !important;
-  margin: 0.5em;
+  margin: 0.5rem;
 }
 h1{
   text-align: center;
-  margin: 1.5em;
+  padding: 2rem;
+  margin: 0;
 }
 p{
-  margin: 1em;
+  margin: 1rem;
 }
+
+/* Navigation */
+
+#main-nav{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 100%;
+  background-color: rgba(0,0,0,0.75);
+}
+
+#main-nav ul{
+  padding: 0;
+  margin: 0;
+}
+#main-nav ul li{
+  display: block;
+  list-style: none;
+  padding-bottom: 2rem;
+}
+
+#home,#sun, #earth{
+  display: block;
+  width: 2rem;
+  height: 2rem;
+}
+#mercury, #venus{
+  display: block;
+  width: 2rem;
+  height: 2.5rem;
+}
+
+#home{ background: url('../icons/asteroid.svg') no-repeat;}
+#sun{
+  background: url('../icons/sun.svg') no-repeat;
+  z-index: 1;
+}
+#mercury{ background: url('../icons/mercury.svg') no-repeat; }
+#venus{ background: url('../icons/venus.svg') no-repeat; }
+#earth{ background: url('../icons/earth.svg') no-repeat; }
+
+
+
+a.nav-element span{
+  display: none;
+  width: 15rem;
+  padding: 0.5rem;
+  position: absolute;
+  top: 0;
+  left: 2.5rem;
+  background-color: rgba(0,0,0,0.75);
+  z-index: 999;
+}
+a.nav-element:hover{
+  position: relative;
+}
+a.nav-element:hover span{
+  display: block;
+
+}
+
+/*inline links*/
 a{
   color: #FFEF00;
   text-decoration: none;
   position: relative;
 }
-a:after{
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  border-bottom: 0.05em solid #FFEF00;
-  transition: 0.5s;
-  -o-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -webkit-transition: 0.5s;
+a.tip{
+  border-bottom: 1px dashed #FFEF00;
 }
+a.tip:hover{
+  position: relative;
+}
+a.tip span{
+  display: none;
+}
+a.tip:hover span{
+  display: block;
+  min-width: 10em;
+  padding: 0.5rem;
+  background-color: black;
+  border: 0.05rem solid #204254;
+  color: white;
+  position: absolute;
+  z-index: 999;
+}
+
+p a:hover{
+  border-bottom: 0.05rem solid #FFEF00;
+
+}
+
 a:hover:after{
   width: 100%;
 }
 a:visited{
   color: #FFEF00;
 }
+
+/*buttons*/
 .button{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2em;
-  width: 10em;
-  border: 0.1em solid black;
+  height: 2rem;
+  width: 10rem;
+  border: 0.1rem solid black;
   font-family: 'Nova Mono', monospace;
-  font-size: 1.3em;
-  color: black;
-  letter-spacing: -0.05em;
+  font-size: 1rem;
+  color: black !important;
+  letter-spacing: -0.05rem;
   transition: background-color 0.5s;
   -o-transition: background-color 0.5s;
   -moz-transition: background-color 0.5s;
@@ -91,55 +168,90 @@ a:visited{
   background-color: black;
   color: #FFEF00 !important;
   text-decoration: none;
-  border: 0.1em solid black;
+  border: 0.1rem solid black;
   cursor: pointer;
 }
 
+/* Footer */
+footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 7rem;
+  background-color: rgba(0,0,0,0.75);
+  opacity: 1;
+}
 #footer-nav{
   display: flex;
   flex-wrap: wrap;
-  width: 70%;
+  width: 100%;
   flex-direction: row;
-  justify-content: space-around;
-  background-color: rgba(0,0,0,0.75);
-  margin: 1em auto;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto 0 auto;
 }
-
 footer ul{
   list-style: none;
 }
-.social-media li{
+footer ul li{
   display: inline-block;
-  padding: 0.7em;
+  padding: 0.7rem;
+}
+footer a:after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: 0.05rem solid #2B799F;
+  transition: 0.5s;
+  -o-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
 }
 .fa{
-  font-size: 1.5em !important;
+  font-size: 1.5rem !important;
+  padding: 0.5rem 0 0.3rem 0;
 }
 
 /* --- INDEX PAGE --- */
-#index-bg{
-  min-width: 100%;
-  min-height: 100%;
-  position: absolute;
+.index-bg{
+  width: 100%;
+  height: 100%;
+  position: fixed;
   top: 0;
   left: 0;
-  background-image: url('../bg-images/asteroids.jpg');
-  background-size: cover;
+  background: url('../bg-images/asteroids.jpg') no-repeat;
+  background-size: 100% auto;
   background-attachment: fixed;
-  background-position: center top;
+  background-position: center center;
   z-index: -999;
 }
+
+/* "Asteroid of the Day" Section */
+
+#top-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 35rem;
+  background-color: rgba(0,0,0,0.75);
+  opacity: 1;
+}
+
 .asteroid-box{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30em;
+  width: 30rem;
   height: auto;
   position: relative;
-  background-color: rgba(255,239,0,0.75);
+  background-color: rgba(75,162,206,0.75);
   color: black;
   margin: 0 auto;
-  padding: 1.5em;
+  padding: 1.5rem;
 }
 #asteroid-name{
   color: black !important;
@@ -147,23 +259,142 @@ footer ul{
 }
 .learn-more-pos{
   position: relative;
-  margin: 0.5em auto;
-}
-.hover-circle{
-  display: block;
-  width: 18em;
-  height: 18em;
-  border: 5px solid black;
-  border-radius: 50%;
-  margin: 20px;
+  margin: 0.5rem auto;
 }
 
-.hover-circle span{
-  display: inline-block;
-  width: 2em;
-  height: 2em;
+#bg-box{
+  display: none;
+  width: 20rem;
+  height: auto;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background-color: rgba(0,0,0,0.75)/*rgba(32,66,84,0.75)*/;
+  border: 0.05rem solid rgba(32,66,84,0.75);
+  z-index: 999;
+}
+/* "Discover more asteroids" Section
+
+#bottom-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 40rem;
+  opacity: 0.15;
+}
+/*
+#discover{
+  position: absolute;
+  top: 2.5em;
+  left: 1.5rem;
+  margin: 0;
+}
+.hover-container{
+  display: block;
+  width: 60%;
+  height: 20%;
+  position: relative;
+  border-radius: 50%;
+  padding: 1.5rem;
+  margin: 0 auto;
+  background-color: rgba(33,37,83,0.75);
+}
+
+.hover-container i{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -1rem;
+  width: 2rem;
+  height: 2rem;
   background: url('../icons/x.svg');
 }
+.hover-container i:hover{
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.deg0, #xbox1{ transform: rotate(0) translate(15rem) rotate(0);}
+.deg45, #xbox2{ transform: rotate(45deg) translate(15rem) rotate(-45deg);}
+.deg90, #xbox3{ transform: rotate(90deg) translate(15rem) rotate(-90deg);}
+.deg135, #xbox4{ transform: rotate(135deg) translate(15rem) rotate(-135deg);}
+.deg180, #xbox5{ transform: rotate(180deg) translate(15rem) rotate(-180deg);}
+.deg225, #xbox6{ transform: rotate(225deg) translate(15rem) rotate(-225deg);}
+.deg270, #xbox7{ transform: rotate(270deg) translate(15rem) rotate(-270deg);}
+.deg315, #xbox8{ transform: rotate(315deg) translate(15rem) rotate(-315deg);}
+
+#xbox1, #xbox2, #xbox3, #xbox4, #xbox5, #xbox6, #xbox7, #xbox8, #bg-box{
+  display: block;
+  width: 20rem;
+  height: auto;
+  background-color: rgba(0,0,0,0.75)/*rgba(32,66,84,0.75)/;
+  border: 0.05rem solid rgba(32,66,84,0.75);
+  z-index: 999;
+}
+#xbox1, #xbox2, #xbox8{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+#xbox3, #xbox7{
+  position: absolute;
+  top: 50%;
+  left: 39%
+}
+#xbox4, #xbox5, #xbox6{
+  position: absolute;
+  top: 50%;
+  right: 50%;
+}
+
+
+#bg-expl-container{
+  width: 22rem;
+  height: 20rem;
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+}
+
+#bg-circle{
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3rem;
+  height: 3rem;
+  background: url('../icons/o.svg') top left no-repeat;
+  background-size: 2rem 2rem;
+}
+*/
+
+/* --- ABOUT --- */
+
+#about-bg{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url('../bg-images/about.jpg') no-repeat;
+  background-size: cover;
+  z-index: -999;
+}
+
+#about-content{
+  display: flex;
+  width: 40em;
+  height: auto;
+  margin: 0 auto;
+  background-color: rgba(32,66,84,0.75);
+
+}
+
 
 /* --- STYLES FOR TABLET --- */
 @media screen and (max-width: 768px){
@@ -171,12 +402,20 @@ footer ul{
   /* CREATE HAMBURGER MENU */
 
   .asteroid-box{
-    width: 95%;
+    width: 350px;
   }
+
 }
 
 /* --- STYLES FOR SMARTPHONE --- */
 @media screen and (max-width: 415px){
 
+  h1{ font-size: 1.5rem; }
+  h2{ font-size: 1.3rem; }
+
+  .asteroid-box{
+    width: 95%;
+    padding: 0;
+  }
 
 }

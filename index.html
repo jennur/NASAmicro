@@ -11,18 +11,38 @@
 
 </head>
 <body>
-  <div id="index-bg"></div>
+  <div id="bg" class="index-bg"></div>
+
+  <div id="content">
   <header>
     <nav id="main-nav">
       <ul>
-        <li><a href="asteroid-of-the-day.html">Today's asteroid</a></li>
-        <li><a href="well-known-asteroids.html">Well known asteroids</a></li>
-        <li><a href="planetary-defense.html">How do we defend our planet?</a></li>
+        <li><a id="home" class="nav-element" href="index.html"><span>Home</span></a></li>
+        <li>
+          <a id="sun" class="nav-element"><span id="bg-cap">Check out the background-picture</span></a>
+          <div id="bg-box">
+            <p>
+              This image is retrieved from NASA's
+              <a href="https://apod.nasa.gov" target="_blank" title="Opens in new tab">APoD (2013 August 12th)</a>,
+              and shows the orbits of the nearly 1,500 known Potentially Hazardous Asteroids (PHA's) in our solar system.
+              PHA's are considered by <a href="https://cneos.jpl.nasa.gov/about/neo_groups.html" target="_blank" title="Opens in new tab">NASA</a>
+               to be asteroids within a certain distance (specifically <a class="tip">0.05 AU <span>7,479,893.54 km<br /> 4,647,790.36 miles</span></a>) and with an
+              <a class="tip">absolute magnitude (H)<span>Measure of a celestial object's luminosity (total amount of energy emitted per unit time).</span></a>
+              less than or equal to 22.0. If an asteroid does not fulfill at least one of these requirements, it's not considered a PHA.
+
+              Read more about <a href="https://apod.nasa.gov/apod/ap130812.html" target="_blank" title="Opens in new tab">here</a>.
+            </p>
+          </div>
+        </li>
+        <li><a id="mercury" class="nav-element" href="asteroid-of-the-day.html"><span>Today's asteroid</span></a></li>
+        <li><a id="venus" class="nav-element" href="well-known-asteroids.html"><span>Well known asteroids</span></a></li>
+        <li><a id="earth" class="nav-element" href="planetary-defense.html"><span>How do we defend our planet?</span></a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+    <div id="top-container">
     <h1>Asteroid of the day</h1>
     <div class="asteroid-box">
       <h2 id="asteroid-name">Asteroid name</h2>
@@ -37,35 +57,60 @@ The path of a cosmonaut is not an easy, triumphant march to glory. You have to g
 For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.
       </p>
 
-      <a class="button learn-more-pos">Learn more ></a>
+      <a href="asteroid-of-the-day.html" class="button learn-more-pos">Learn more ></a>
+    </div><!-- asteroid box -->
+  </div> <!--top container -->
+
+  <!-- <div id="bottom-container">
+      <h2 id="discover">Discover more asteroids</h2>
+      <div class="hover-container">
+        <i id="x1" class="deg0"></i><div id="xbox1"></div>
+        <i id="x2" class="deg45"></i><div id="xbox2"></div>
+        <i id="x3" class="deg90"></i><div id="xbox3"></div>
+        <i id="x4" class="deg135"></i><div id="xbox4"></div>
+        <i id="x5" class="deg180"></i><div id="xbox5"></div>
+        <i id="x6" class="deg225"></i><div id="xbox6"></div>
+        <i id="x7" class="deg270"></i><div id="xbox7"></div>
+        <i id="x8" class="deg315"></i><div id="xbox8"></div>
+      </div>
+      <div id="bg-expl-container">
+      <i id="bg-circle"></i>
+      <div id="bg-box">
+        <p>
+          This image is retrieved from NASA's
+          <a href="https://apod.nasa.gov" target="_blank" title="Opens in new tab">APoD (2013 August 12th)</a>,
+          and shows the orbits of the nearly 1,500 known Potentially Hazardous Asteroids (PHA's) in our solar system.
+          PHA's are considered by <a href="https://cneos.jpl.nasa.gov/about/neo_groups.html" target="_blank" title="Opens in new tab">NASA</a>
+           to be asteroids within a certain distance (specifically <a class="tip">0.05 AU <span>7,479,893.54 km<br /> 4,647,790.36 miles</span></a>) and with an
+          <a class="tip">absolute magnitude (H)<span>Measure of a celestial object's luminosity (total amount of energy emitted per unit time).</span></a>
+          less than or equal to 22.0. If an asteroid does not fulfill at least one of these requirements, it's not considered a PHA.
+
+          Read more about <a href="https://apod.nasa.gov/apod/ap130812.html" target="_blank" title="Opens in new tab">here</a>.
+        </p>
+      </div>
     </div>
-    <div class="hover-circle">
-      <span id="x1"></span>
-      <span id="x2"></span>
-      <span id="x3"></span>
-      <span id="x4"></span>
-      <span id="x5"></span>
-      <span id="x6"></span>
-      <span id="x7"></span>
-      <span id="x8"></span>
-    </div>
+  </div> -->
+
   </main>
 
   <footer>
     <nav id="footer-nav">
       <ul>
-        <li><a href="about.html">About Asteroid of the Day</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html" title="About Asteroid of the Day">About</a></li>
+        <li><a href="contact.html" title="Contact me">Contact</a></li>
       </ul>
       <ul class="social-media">
-        <li><a href="https://www.facebook.com/NASA/" class="fa fa-facebook"></a></li>
-        <li><a href="https://www.instagram.com/nasa/" class="fa fa-instagram"></a></li>
-        <li><a href="https://twitter.com/nasa" class="fa fa-twitter"></a></li>
+        <li><a href="https://www.facebook.com/NASA/" class="fa fa-facebook" title="Follow NASA on Facebook"></a></li>
+        <li><a href="https://www.instagram.com/nasa/" class="fa fa-instagram" title="Follow NASA on Instagram"></a></li>
+        <li><a href="https://twitter.com/nasa" class="fa fa-twitter" title="Follow NASA on Twitter"></a></li>
       </ul>
     </nav>
-  </footer>
+    <p>&copy; 2018 Jennurate All Rights Reserved </p>
 
+  </footer>
+</div> <!-- content -->
 <script src="scripts/api.js"></script>
+<script src="scripts/home.js"></script>
 <script src="scripts/global.js"></script>
 </body>
 </html>

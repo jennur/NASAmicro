@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="description" content="Check out the nearest asteroid of today! Data retrieved from NASA." />
   <meta name="keywords" content="asteroid, celestial object, celestial bodies, earth, NASA, space" />
-  <link href="styles/styles.css" type="text/css" />
+  <link rel="stylesheet" href="styles/styles.css" type="text/css" />
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
@@ -12,6 +12,7 @@
 <body>
   <header>
     <nav id="main-nav">
+      <a href="index.html" title="Back to home page"><i id="home"></i></a>
       <ul>
         <li><a href="asteroid-of-the-day.html">Today's asteroid</a></li>
         <li><a href="well-known-asteroids.html">Well known asteroids</a></li>
@@ -21,7 +22,22 @@
   </header>
 
   <main>
-
+    <div id="about-bg"></div>
+    <h1>What is this site?</h1>
+    <div id="about-content">
+      <p>
+        Hi, and thank you for showing interest in this microsite!
+        <br />
+        <br />
+        "Asteroid of the Day" was built as a school project in the Front-End-Development program at <a href="http://www.noroff.no" target="_blank" title="Opens in new tab">Noroff</a>. Inspired by the <a href="https://apod.nasa.gov/" title="Opens in new tab" target="_blank">APoD (Astronomy Picture of the Day)</a>, I wanted to use
+        NASA's <a href="https://api.nasa.gov/api.html#NeoWS" target="_blank" title="Opens in new tab">NeoWs (Near Earth Object Web Service)</a> to create this microsite to display some cool facts about asteroids. I'm a science enthusiast myself and I hope you enjoy the content of
+        this site as much as I do.
+        <br />
+        <br />
+        All Near Earth Object data is retrieved from
+        <a href="https://api.nasa.gov/api.html#NeoWS" target="_blank" title="Opens in new tab">NASA's API's</a>. For any questions or comments/feedback about the site, please <a href="contact.html">contact me</a>.
+      </p>
+    </div>
   </main>
 
   <footer>
@@ -38,7 +54,7 @@
     </nav>
   </footer>
 
-<script src="validations/api.js"></script>
+<script src="scripts/api.js"></script>
 <script src="scripts/global.js"></script>
 </body>
 </html>

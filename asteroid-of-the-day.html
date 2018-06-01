@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="description" content="Check out the nearest asteroid of today! Data retrieved from NASA." />
   <meta name="keywords" content="asteroid, celestial object, celestial bodies, earth, NASA, space" />
-  <link href="styles/styles.css" type="text/css" />
+  <link rel="stylesheet" href="styles/styles.css" type="text/css" />
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
@@ -12,6 +12,7 @@
 <body>
   <header>
     <nav id="main-nav">
+      <a href="index.html" title="Back to home page"><i id="home"></i></a>
       <ul>
         <li><a href="asteroid-of-the-day.html">Today's asteroid</a></li>
         <li><a href="well-known-asteroids.html">Well known asteroids</a></li>
@@ -21,6 +22,8 @@
   </header>
 
   <main>
+    <div id="asteroid-bg"></div>
+
     <h1></h1> <!-- Content retrieved from API -->
   </main>
 

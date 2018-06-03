@@ -10,47 +10,19 @@
 
 </head>
 <body>
-  <div id="bg" class="about-bg"></div>
-
-  <!-- Background element -->
-  <ul class="nav-list">
-    <li>
-      <a id="sun" class="nav-element"><span id="bg-cap">Check out the background-picture</span></a>
-    </li>
-    <li>
-      <div id="bg-expl-container">
-        <i id="x"></i>
-        <div id="bg-box">
-          <p>
-            This image is retrieved from NASA's
-            <a href="https://apod.nasa.gov" target="_blank" title="Opens in new tab">APoD (2013 August 12th)</a>,
-            and shows the orbits of the nearly 1,500 known Potentially Hazardous Asteroids (PHA's) in our solar system.
-            PHA's are considered by <a href="https://cneos.jpl.nasa.gov/about/neo_groups.html" target="_blank" title="Opens in new tab">NASA</a>
-             to be asteroids within a certain distance (specifically <a class="tip">0.05 AU <span>7,479,893.54 km<br /> 4,647,790.36 miles</span></a>) and with an
-            <a class="tip">absolute magnitude (H)<span>Measure of a celestial object's luminosity (total amount of energy emitted per unit time).</span></a>
-            less than or equal to 22.0. If an asteroid does not fulfill at least one of these requirements, it's not considered a PHA.
-
-            Read more about <a href="https://apod.nasa.gov/apod/ap130812.html" target="_blank" title="Opens in new tab">here</a>.
-          </p>
-        </div>
-      </div>
-    </li>
-  </ul>
-<div id="content">
   <header>
     <nav id="main-nav">
+      <a href="index.html" title="Back to home page"><i id="home"></i></a>
       <ul>
-        <li><a id="home" class="nav-element" href="index.html"><span>Home</span></a></li>
-        <li><a id="mercury" class="nav-element" href="asteroid-of-the-day.html"><span>Today's asteroid</span></a></li>
-        <li><a id="venus" class="nav-element" href="well-known-asteroids.html"><span>Well known asteroids</span></a></li>
-        <li><a id="earth" class="nav-element" href="planetary-defense.html"><span>How do we defend our planet?</span></a></li>
-        <li><a id="mars" class="nav-element" href="discover.html"><span>Discover more asteroids</span></a></li>
-        <li><a id="jupiter" class="nav-element" href="#"><span>Another page</span></a></li>
+        <li><a href="asteroid-of-the-day.html">Today's asteroid</a></li>
+        <li><a href="well-known-asteroids.html">Well known asteroids</a></li>
+        <li><a href="planetary-defense.html">How do we defend our planet?</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+    <div id="about-bg"></div>
     <h1>What is this site?</h1>
     <div id="about-content">
       <p>
@@ -71,19 +43,16 @@
   <footer>
     <nav id="footer-nav">
       <ul>
-        <li><a href="about.html" title="About Asteroid of the Day">About</a></li>
-        <li><a href="contact.html" title="Contact me">Contact</a></li>
+        <li><a href="about.html">About Asteroid of the Day</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
       <ul class="social-media">
-        <li><a href="https://www.facebook.com/NASA/" class="fa fa-facebook" title="Follow NASA on Facebook"></a></li>
-        <li><a href="https://www.instagram.com/nasa/" class="fa fa-instagram" title="Follow NASA on Instagram"></a></li>
-        <li><a href="https://twitter.com/nasa" class="fa fa-twitter" title="Follow NASA on Twitter"></a></li>
+        <li><a href="https://www.facebook.com/NASA/" class="fa fa-facebook"></a></li>
+        <li><a href="https://www.instagram.com/nasa/" class="fa fa-instagram"></a></li>
+        <li><a href="https://twitter.com/nasa" class="fa fa-twitter"></a></li>
       </ul>
     </nav>
-    <p>&copy; 2018 Jennurate All Rights Reserved </p>
-
   </footer>
-</div> <!-- content -->
 
 <script src="scripts/api.js"></script>
 <script src="scripts/global.js"></script>

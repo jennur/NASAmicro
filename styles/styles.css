@@ -24,6 +24,14 @@ body{
   padding: 0;
   background-color: black;
 }
+#content{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+   background-color: rgba(0,0,0,0.4);
+}
 main{
   width: inherit;
 }
@@ -45,21 +53,38 @@ p{
 /* Navigation */
 
 #main-nav{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 7.5rem;
+  left: 2.3rem;
   width: 2.5rem;
-  height: 100%;
+  height: auto;
   background-color: rgba(0,0,0,0.75);
 }
 
 #main-nav ul{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 2.5rem;
   padding: 0;
   margin: 0;
 }
+
+ul.nav-list{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: 3.5rem;
+  left: 2.5rem;
+  padding: 0;
+  margin: 0;
+}
+ul.nav-list li{
+  display: block;
+  list-style: none;
+}
+
 #main-nav ul li{
   display: block;
   list-style: none;
@@ -71,7 +96,7 @@ p{
   width: 2rem;
   height: 2rem;
 }
-#mercury, #venus{
+#mercury, #venus, #mars, #jupiter{
   display: block;
   width: 2rem;
   height: 2.5rem;
@@ -85,12 +110,43 @@ p{
 #mercury{ background: url('../icons/mercury.svg') no-repeat; }
 #venus{ background: url('../icons/venus.svg') no-repeat; }
 #earth{ background: url('../icons/earth.svg') no-repeat; }
+#mars{ background: url('../icons/mars.svg') no-repeat; }
+#jupiter{ background: url('../icons/jupiter.svg') no-repeat; }
 
 
+#x{
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url('../icons/x.svg') no-repeat;
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+  z-index: 1000;
+  opacity: 0;
+}
+#bg-box{
+  display: none;
+  width: 20rem;
+  height: auto;
+  position: absolute;
+  top: 7rem;
+  left: 7rem;
+  background-color: rgba(0,0,0,0.75)/*rgba(32,66,84,0.75)*/;
+  border: 0.05rem solid rgba(32,66,84,0.75);
+  z-index: 999;
+}
+/*#bg-expl-container{
+  width: 22rem;
+  height: 20rem;
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+} */
 
 a.nav-element span{
   display: none;
-  width: 15rem;
+  width: 17rem;
   padding: 0.5rem;
   position: absolute;
   top: 0;
@@ -100,6 +156,7 @@ a.nav-element span{
 }
 a.nav-element:hover{
   position: relative;
+  cursor: pointer;
 }
 a.nav-element:hover span{
   display: block;
@@ -134,7 +191,6 @@ a.tip:hover span{
 
 p a:hover{
   border-bottom: 0.05rem solid #FFEF00;
-
 }
 
 a:hover:after{
@@ -179,7 +235,7 @@ footer{
   justify-content: center;
   align-items: center;
   min-height: 7rem;
-  background-color: rgba(0,0,0,0.75);
+  /*background-color: rgba(0,0,0,0.75);*/
   opacity: 1;
 }
 #footer-nav{
@@ -237,7 +293,7 @@ footer a:after{
   align-items: center;
   justify-content: center;
   height: 35rem;
-  background-color: rgba(0,0,0,0.75);
+  /*background-color: rgba(0,0,0,0.75);*/
   opacity: 1;
 }
 
@@ -248,7 +304,7 @@ footer a:after{
   width: 30rem;
   height: auto;
   position: relative;
-  background-color: rgba(75,162,206,0.75);
+  background-color: rgba(75,162,206,0.85);
   color: black;
   margin: 0 auto;
   padding: 1.5rem;
@@ -262,17 +318,7 @@ footer a:after{
   margin: 0.5rem auto;
 }
 
-#bg-box{
-  display: none;
-  width: 20rem;
-  height: auto;
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-  background-color: rgba(0,0,0,0.75)/*rgba(32,66,84,0.75)*/;
-  border: 0.05rem solid rgba(32,66,84,0.75);
-  z-index: 999;
-}
+
 /* "Discover more asteroids" Section
 
 #bottom-container{
@@ -352,29 +398,11 @@ footer a:after{
 }
 
 
-#bg-expl-container{
-  width: 22rem;
-  height: 20rem;
-  position: absolute;
-  top: 5rem;
-  left: 5rem;
-}
-
-#bg-circle{
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 3rem;
-  height: 3rem;
-  background: url('../icons/o.svg') top left no-repeat;
-  background-size: 2rem 2rem;
-}
 */
 
 /* --- ABOUT --- */
 
-#about-bg{
+.about-bg{
   display: block;
   width: 100%;
   height: 100%;
@@ -408,13 +436,13 @@ footer a:after{
 }
 
 /* --- STYLES FOR SMARTPHONE --- */
-@media screen and (max-width: 415px){
+@media screen and (max-width: 600px){
 
   h1{ font-size: 1.5rem; }
   h2{ font-size: 1.3rem; }
 
   .asteroid-box{
-    width: 95%;
+    width: 70%;
     padding: 0;
   }
 

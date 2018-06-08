@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="description" content="Check out the nearest asteroid of today! Data retrieved from NASA." />
+  <meta name="keywords" content="asteroid, celestial object, celestial bodies, earth, NASA, space" />
+  <link rel="stylesheet" href="styles/styles.css" type="text/css" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <title>Asteroid of the Day | Discover More Approaching Asteroids</title>
+
+  </head>
+<body>
+  <div id="bg" class="discover-bg"></div>
+  <div id="filter"></div>
+
+  <!-- Background element -->
+  <ul class="nav-list">
+    <li>
+      <a id="sun" class="nav-element"><span id="bg-cap"><p>Check out the background-picture</p></span></a>
+    </li>
+    <li>
+      <div id="bg-expl-container">
+        <i id="x"></i>
+        <div id="bg-box">
+          <p>
+            In <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=PIA00136" target="_blank" title="Opens in new tab">this picture</a>
+            you see the very first asteroid found to have its own moon, 243 Ida! This asteroid was discovered
+            in 1884 by Johann Palisa (Austria), but its mooon, Dactyl, was not discovered until 1994 when
+            <a href="https://www.jpl.nasa.gov/missions/galileo/" target="_blank" title="Opens in new tab">Galileo</a>
+            flew by the asteroid on its way to Jupiter. Ida was the 243rd asteroid to be discovered and got its name
+            after a nymph in Greek mythology. It was the second asteroid to be visited by a spacecraft after Galileo visited 951 Gaspra in 1991.
+            Read more about Ida and its moon
+            <a href="https://solarsystem.nasa.gov/small-bodies/asteroids/243-ida/in-depth/" target="_blank" title="Opens in new tab">here</a>.
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+<div id="content">
+  <header>
+    <nav id="main-nav">
+      <ul>
+        <li><a id="home" class="nav-element" href="index.html"><span><p>Home</span></p></a></li>
+        <li><a id="mercury" class="nav-element" href="asteroid-of-the-day.html"><span><p>Today's asteroid</p></span></a></li>
+        <li><a id="venus" class="nav-element" href="discover.html"><span><p>Discover more approaching asteroids</p></span></a></li>
+        <li><a id="earth" class="nav-element" href="planetary-defense.html"><span><p>How do we defend our planet?</p></span></a></li>
+        <li><a id="mars" class="nav-element" href="asteroid-belt.html"><span><p>Learn more about the asteroid belt</p></span></a></li>
+        <li><a id="jupiter" class="nav-element" href="well-known-asteroids.html"><span><p>Well known asteroids</p></span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+      <h1>Today's Nearest Asteroids</h1>
+      <ul id="asteroids-list"></ul>
+      <a id="to-top" href="#content" title="Back to top"></a>
+  </main>
+
+  <footer>
+    <nav id="footer-nav">
+      <ul>
+        <li><a href="about.html" title="About Asteroid of the Day">About</a></li>
+        <li><a href="contact.php" title="Contact me">Contact</a></li>
+      </ul>
+      <ul class="social-media">
+        <li><a href="https://www.facebook.com/NASA/" class="fa fa-facebook" title="Follow NASA on Facebook"></a></li>
+        <li><a href="https://www.instagram.com/nasa/" class="fa fa-instagram" title="Follow NASA on Instagram"></a></li>
+        <li><a href="https://twitter.com/nasa" class="fa fa-twitter" title="Follow NASA on Twitter"></a></li>
+      </ul>
+    </nav>
+    <p>&copy; 2018 Jennurate All Rights Reserved </p>
+
+  </footer>
+</div> <!-- content -->
+
+<script src="scripts/api.js"></script>
+<script src="scripts/global.js"></script>
+
+</body>
+</html>

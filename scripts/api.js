@@ -15,7 +15,7 @@ request.onload = function(){ //creating function to be called when content is lo
     var data = JSON.parse(this.response); //assign loaded JSON content to variable
     console.log(data);
     var asteroid = data["near_earth_objects"][startDate]["0"];
-
+    var diameter, velocity, distance, absMagn, hazardous, missDist;
     if(window.location.href.indexOf("index") !== -1){
       var asteroidName = document.getElementById('asteroid-name');
       asteroidName.innerHTML = data["near_earth_objects"][startDate]["0"]["name"];
@@ -23,18 +23,18 @@ request.onload = function(){ //creating function to be called when content is lo
       // APPEND CONTENT TO INDEX PAGE
       var details = document.getElementById('details-list');
 
-      var diameter = document.createElement('li');
+      diameter = document.createElement('li');
       details.appendChild(diameter);
       diameter.innerHTML = "<b>Estimated diameter (min/max):</b><br/> " + (asteroid.estimated_diameter.meters.estimated_diameter_min).toFixed(2) + " m / "
       + (asteroid.estimated_diameter.meters.estimated_diameter_max).toFixed(2) + " m <br />"
       + (asteroid.estimated_diameter.feet.estimated_diameter_min).toFixed(2) + " ft / " + (asteroid.estimated_diameter.feet.estimated_diameter_max).toFixed(2) + " ft";
 
-      var velocity = document.createElement('li');
+      velocity = document.createElement('li');
       details.append(velocity);
       velocity.innerHTML = "<b>Relative velocity:</b><br/> " + asteroid.close_approach_data["0"].relative_velocity.kilometers_per_hour + " km/h <br />"
       + asteroid.close_approach_data["0"].relative_velocity.miles_per_hour + " miles/h";
 
-      var distance = document.createElement('li');
+      distance = document.createElement('li');
       details.appendChild(distance);
       distance.innerHTML = "<b>Miss distance:</b><br/> " +
       asteroid.close_approach_data["0"].miss_distance.astronomical + " AU <br/>" +
@@ -42,11 +42,11 @@ request.onload = function(){ //creating function to be called when content is lo
       asteroid.close_approach_data["0"].miss_distance.kilometers + " km <br/>" +
       asteroid.close_approach_data["0"].miss_distance.miles + " miles";
 
-      var absMagn = document.createElement('li');
+      absMagn = document.createElement('li');
       details.appendChild(absMagn);
       absMagn.innerHTML = "<b>Asbolute magnitude:</b><br/> " + asteroid.absolute_magnitude_h + " H";
 
-      var hazardous = document.createElement('li');
+      hazardous = document.createElement('li');
       details.appendChild(hazardous);
       if(asteroid.is_potentially_hazardous_asteroid){
         hazardous.innerHTML = "<b>Potentially hazardous:</b><br/>Yes";
@@ -71,7 +71,7 @@ request.onload = function(){ //creating function to be called when content is lo
             var detailsList = document.getElementById('details');
 
 
-            var diameter = document.createElement('li');
+            diameter = document.createElement('li');
             detailsList.appendChild(diameter);
             diameter.innerHTML = "<b>Estimated diameter (min/max):</b><br/> "
             + detailsData.estimated_diameter.meters.estimated_diameter_min + " m / "
@@ -83,11 +83,11 @@ request.onload = function(){ //creating function to be called when content is lo
             + detailsData.estimated_diameter.miles.estimated_diameter_min + " miles / "
             + detailsData.estimated_diameter.miles.estimated_diameter_max + " miles";
 
-            var absMagn = document.createElement('li');
+            absMagn = document.createElement('li');
             detailsList.appendChild(absMagn);
             absMagn.innerHTML = "<b>Absolute Magnitude: </b>" + detailsData.absolute_magnitude_h + " H";
 
-            var hazardous = document.createElement('li');
+            hazardous = document.createElement('li');
             detailsList.appendChild(hazardous);
             if(asteroid.is_potentially_hazardous_asteroid){
               hazardous.innerHTML = "<b>Potentially hazardous:</b> Yes";
@@ -98,7 +98,7 @@ request.onload = function(){ //creating function to be called when content is lo
 
             var moreFacts = document.createElement('li');
             detailsList.appendChild(moreFacts);
-            moreFacts.innerHTML = 'See all details <a href="' + detailsData.nasa_jpl_url + '" target="_blank" title="Opens in new tab">here</a>';
+            moreFacts.innerHTML = 'See all details, including orbital data, <a href="' + detailsData.nasa_jpl_url + '" target="_blank" title="Opens in new tab">here</a>';
 
             //Append content to timeline
             var timeline = document.getElementById('timeline');
@@ -115,14 +115,14 @@ request.onload = function(){ //creating function to be called when content is lo
               var orbitBody = document.createElement('li');
               orbitBody.innerHTML = "<b>Orbiting body:</b> " + closeApproach[i].orbiting_body;
 
-              var missDist = document.createElement('li');
+              missDist = document.createElement('li');
               missDist.innerHTML = "<b>Miss distance:</b><br/> " +
               closeApproach[i].miss_distance.astronomical + " AU <br/>" +
               closeApproach[i].miss_distance.lunar + " LD <br/>" +
               closeApproach[i].miss_distance.kilometers + " km <br/>" +
               closeApproach[i].miss_distance.miles + " miles";
 
-              var velocity = document.createElement('li');
+              velocity = document.createElement('li');
               velocity.innerHTML = "<b>Relative velocity:</b><br/>" +
               closeApproach[i].relative_velocity.kilometers_per_hour + " km/h<br/>" +
               closeApproach[i].relative_velocity.kilometers_per_second + " km/s<br/>" +
@@ -145,6 +145,62 @@ request.onload = function(){ //creating function to be called when content is lo
       detailsRequest.send();
 
     }
+    if(window.location.href.indexOf('discover') !== -1){
+      var asteroids = data["near_earth_objects"][startDate];
+      var asteroidsList = document.getElementById('asteroids-list');
+      var count = document.createElement('li');
+      asteroidsList.appendChild(count);
+      count.innerHTML = "<b>Number of near earth objects today:</b> " + data['element_count'];
+
+      //append content from API
+      var i;
+      for(i = 0; i < asteroids.length; i++){
+        var listItem = document.createElement('li');
+        var asteroidData = document.createElement('ul');
+        var name = document.createElement('li');
+        asteroidData.appendChild(name);
+        name.innerHTML = "<h3>" + asteroids[i].name + "</h3>";
+
+        diameter = document.createElement('li');
+        asteroidData.appendChild(diameter);
+        diameter.innerHTML = "<b>Estimated diameter (min/max):</b><br/> "
+        + asteroids[i].estimated_diameter.meters.estimated_diameter_min + " m / "
+        + asteroids[i].estimated_diameter.meters.estimated_diameter_max + " m <br />"
+        + asteroids[i].estimated_diameter.feet.estimated_diameter_min + " ft / "
+        + asteroids[i].estimated_diameter.feet.estimated_diameter_max + " ft";
+
+        velocity = document.createElement('li');
+        asteroidData.appendChild(velocity);
+        velocity.innerHTML = "<b>Relative velocity:</b><br/> "
+        + asteroids[i].close_approach_data["0"].relative_velocity.kilometers_per_hour + " km/h <br />"
+        + asteroids[i].close_approach_data["0"].relative_velocity.miles_per_hour + " miles/h";
+
+        distance = document.createElement('li');
+        asteroidData.appendChild(distance);
+        distance.innerHTML = "<b>Miss distance:</b><br/> " +
+        asteroids[i].close_approach_data["0"].miss_distance.astronomical + " AU <br/>" +
+        asteroids[i].close_approach_data["0"].miss_distance.lunar + " LD <br/>" +
+        asteroids[i].close_approach_data["0"].miss_distance.kilometers + " km <br/>" +
+        asteroids[i].close_approach_data["0"].miss_distance.miles + " miles";
+
+        absMagn = document.createElement('li');
+        asteroidData.appendChild(absMagn);
+        absMagn.innerHTML = "<b>Asbolute magnitude:</b><br/> " + asteroids[i].absolute_magnitude_h + " H";
+
+        hazardous = document.createElement('li');
+        asteroidData.appendChild(hazardous);
+        if(asteroids[i].is_potentially_hazardous_asteroid){
+          hazardous.innerHTML = "<b>Potentially hazardous:</b><br/>Yes";
+        }
+        else{
+          hazardous.innerHTML = "<b>Potentially hazardous:</b><br/>No";
+        }
+        listItem.appendChild(asteroidData);
+        asteroidsList.appendChild(listItem);
+      }
+      //end append content
+    }
+
   }
   else{
     console.log('error. Request status: ' + request.status); //error message to the console if request failed

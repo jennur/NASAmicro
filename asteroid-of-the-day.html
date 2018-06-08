@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="styles/styles.css" type="text/css" />
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <title>Asteroid of the Day | Today's Asteroid Details</title>
 
   </head>
 <body>
   <div id="bg" class="asteroid-bg"></div>
+  <div id="filter"></div>
 
   <!-- Background element -->
   <ul class="nav-list">
@@ -22,15 +24,12 @@
         <i id="x"></i>
         <div id="bg-box">
           <p>
-            This image is retrieved from NASA's
-            <a href="https://apod.nasa.gov" target="_blank" title="Opens in new tab">APoD (2013 August 12th)</a>,
-            and shows the orbits of the nearly 1,500 known Potentially Hazardous Asteroids (PHA's) in our solar system.
-            PHA's are considered by <a href="https://cneos.jpl.nasa.gov/about/neo_groups.html" target="_blank" title="Opens in new tab">NASA</a>
-             to be asteroids within a certain distance (specifically <a class="tip">0.05 AU <span>7,479,893.54 km<br /> 4,647,790.36 miles</span></a>) and with an
-            <a class="tip">absolute magnitude (H)<span>Measure of a celestial object's luminosity (total amount of energy emitted per unit time).</span></a>
-            less than or equal to 22.0. If an asteroid does not fulfill at least one of these requirements, it's not considered a PHA.
-
-            Read more about <a href="https://apod.nasa.gov/apod/ap130812.html" target="_blank" title="Opens in new tab">here</a>.
+            <a href="https://solarsystem.nasa.gov/resources/413/marcia-av-l-12/" target="_blank" title="Opens in new tab">This image</a> shows the very famous asteroid
+            <a href="https://www.nasa.gov/mission_pages/dawn/multimedia/pia15678.html" target="_blank" title="Opens in new tab">Vesta</a>, captured in 2011/2012 by the
+            spacecraft <a href="https://dawn.jpl.nasa.gov/" target="_blank" title="Opens in new tab">Dawn</a> during its
+            mission to Vesta. This asteroid, also known as a protoplanet, was discovered in 1807 by
+            Heinrich Wilhelm Olbers (Germany), and is one of the biggest asteroids in our solar system. Vesta is mainly consisting of rock, and
+            the craters you see on the image is known as "The snowman" due to their position.
           </p>
         </div>
       </div>
@@ -52,15 +51,24 @@
   </header>
 
   <main>
+      <h1 id="asteroid-details-name"></h1>
+      <div class="details-content">
+        <ul id="details">
+        </ul>
 
-    <h1></h1> <!-- Content retrieved from API -->
+        <ul id="timeline">
+          <h2>Close Approach dates</h2>
+        </ul>
+    </div> <!-- details content -->
+
+    <a id="to-top" href="#content" title="Back to top"></a>
   </main>
 
   <footer>
     <nav id="footer-nav">
       <ul>
         <li><a href="about.html" title="About Asteroid of the Day">About</a></li>
-        <li><a href="contact.html" title="Contact me">Contact</a></li>
+        <li><a href="contact.php" title="Contact me">Contact</a></li>
       </ul>
       <ul class="social-media">
         <li><a href="https://www.facebook.com/NASA/" class="fa fa-facebook" title="Follow NASA on Facebook"></a></li>

@@ -3,7 +3,7 @@
 /* COLORS
 yellow: #FFEF00 rgba(255,239,0,1.0)
 light blue: #2B799F rgba(43,127,153,1.0)
-lighter blue: #4BA2CE rgba(75,162,206,1.0)
+lighter blue: #4BA2CE rgba(75,162,206,1.0) WCAG
 dark blue: #204254 rgba(32,66,84,1.0)
 
 */
@@ -23,6 +23,7 @@ body{
   margin: 0;
   padding: 0;
   background-color: black;
+  opacity: 0;
 }
 #content{
   width: 100%;
@@ -30,7 +31,15 @@ body{
   position: absolute;
   top: 0;
   left: 0;
-   background-color: rgba(0,0,0,0.4);
+}
+#filter{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
+  opacity: 1;
 }
 main{
   width: inherit;
@@ -53,12 +62,13 @@ p{
 /* Navigation */
 
 #main-nav{
-  position: absolute;
-  top: 7.5rem;
+  position: fixed;
+  top: 50%;
   left: 2.3rem;
   width: 2.5rem;
   height: auto;
-  background-color: rgba(0,0,0,0.75);
+  margin-top: -12rem;
+  z-index: 999;
 }
 
 #main-nav ul{
@@ -74,11 +84,12 @@ ul.nav-list{
   display: flex;
   flex-direction: row;
   align-items: center;
-  position: absolute;
-  top: 3.5rem;
+  position: fixed;
+  top: 50%;
   left: 2.5rem;
   padding: 0;
-  margin: 0;
+  margin-top: -16rem;
+  z-index: 999;
 }
 ul.nav-list li{
   display: block;
@@ -146,20 +157,26 @@ ul.nav-list li{
 
 a.nav-element span{
   display: none;
-  width: 17rem;
+  width: 22rem;
   padding: 0.5rem;
   position: absolute;
   top: 0;
   left: 2.5rem;
-  background-color: rgba(0,0,0,0.75);
   z-index: 999;
+}
+a.nav-element span p{
+  display: inline-block;
+  width: auto;
+  padding: 0.5rem;
+  margin: 0;
+  background-color: rgba(0,0,0,0.75);
 }
 a.nav-element:hover{
   position: relative;
   cursor: pointer;
 }
 a.nav-element:hover span{
-  display: block;
+  display: inline-block;
 
 }
 
@@ -228,6 +245,26 @@ a:visited{
   cursor: pointer;
 }
 
+#to-top{
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  position: fixed;
+  right: 20%;
+  bottom: 5rem;
+  border-radius: 25%;
+  background: url('../icons/totop.svg')  rgba(75,162,206,0.75) no-repeat;
+  transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -webkit-transition: background-color 0.5s;
+  opacity: 0;
+}
+
+#to-top:hover{
+    background: url('../icons/totop.svg')  rgba(75,162,206,1.0) no-repeat;
+}
+
 /* Footer */
 footer{
   display: flex;
@@ -279,7 +316,7 @@ footer a:after{
   top: 0;
   left: 0;
   background: url('../bg-images/asteroids.jpg') no-repeat;
-  background-size: 100% auto;
+  background-size: cover;
   background-attachment: fixed;
   background-position: center center;
   z-index: -999;
@@ -313,10 +350,15 @@ footer a:after{
   color: black !important;
   text-align: center;
 }
+
+#details-list{
+  list-style: none;
+}
 .learn-more-pos{
   position: relative;
   margin: 0.5rem auto;
 }
+
 
 
 /* "Discover more asteroids" Section
@@ -400,6 +442,59 @@ footer a:after{
 
 */
 
+
+/* ASTEROID OF THE DAY DETAILS PAGE */
+
+.asteroid-bg{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url('../bg-images/asteroid-details.jpg') no-repeat;
+  background-size: cover;
+  z-index: -999;
+}
+
+.details-content{
+  width: 40rem;
+  height: auto;
+  background-color: rgba(0,0,0,0.75);
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  color: white;
+}
+
+#details li{
+  list-style: none;
+  padding: 0.5rem;
+}
+#timeline{
+  list-style: none;
+  padding-top: 1rem;
+  padding: 1.5rem;
+}
+#timeline h2{
+  padding-bottom: 1rem;
+}
+#timeline h3{
+  border-bottom: 1px solid rgba(43,127,153,0.75);
+}
+#timeline li{
+  cursor: pointer;
+}
+#timeline ul{
+  list-style: none;
+  padding: 0 0 2rem 1rem;
+  margin: 0;
+}
+#timeline ul li{
+  padding: 0.5rem 0 0.5rem 0;
+  border-bottom: none;
+}
+
+
 /* --- ABOUT --- */
 
 .about-bg{
@@ -410,7 +505,7 @@ footer a:after{
   top: 0;
   left: 0;
   background: url('../bg-images/about.jpg') no-repeat;
-  background-size: cover;
+  background-size: 100% auto;
   z-index: -999;
 }
 
@@ -420,8 +515,124 @@ footer a:after{
   height: auto;
   margin: 0 auto;
   background-color: rgba(32,66,84,0.75);
+}
+
+
+/* CONTACT PAGE */
+.contact-bg{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url('../bg-images/contact.jpg') no-repeat;
+  background-size: cover;
+  z-index: -999;
+}
+
+fieldset{
+  width: 30rem;
+  margin: 2rem auto 0 auto;
+  padding: 1.5rem;
+  border: 0.01rem solid #4BA2CE;
+  background-color: rgba(0,0,0,0.75);
 
 }
+fieldset legend{
+  text-align: center;
+  color: #FFEF00;
+}
+
+form{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+input[type], textarea{
+  background-color: rgba(0,0,0,0.75);
+  color: white;
+  border: 0.01rem solid rgba(75,162,206,0.75);
+  font-family: 'Cutive Mono';
+}
+input[type]:focus, textarea:focus{
+  border: 0.01rem solid rgba(75,162,206,1.0);
+  outline: none;
+}
+input[type="text"]{
+  width: 42%;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+textarea, input[type="email"]{
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+textarea{
+  height: 9rem;
+  resize: none;
+}
+
+::placeholder{
+  color: white;
+  opacity: 1;
+}
+::-ms-input-placeholder{
+  color: white;
+  opacity: 1;
+}
+:-ms-input-placeholder{
+  color: white;
+  opacity: 1;
+}
+
+input[type="submit"]{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  width: 10rem;
+  margin: 0.5rem auto;
+  border: 0.1rem solid #FFEF00;
+  font-family: 'Nova Mono', monospace;
+  font-size: 1rem;
+  color: #FFEF00 !important;
+  letter-spacing: -0.05rem;
+  transition: background-color 0.5s;
+  -o-transition: background-color 0.5s;
+  -moz-transition: background-color 0.5s;
+  -webkit-transition: background-color 0.5s;
+}
+input[type="submit"]:after{
+  border-bottom: none;
+}
+input[type="submit"]:hover, input[type="submit"]:active{
+  background-color: #FFEF00;
+  color:black !important;
+  text-decoration: none;
+  border: 0.1rem solid #FFEF00;
+  cursor: pointer;
+}
+
+.hide-robot{
+  display: none;
+}
+
+#name-error, #email-error, #subject-error, #message-error{
+  width: 100%;
+  height: 0rem;
+  color: red;
+  padding-left: 0.5rem;
+  margin: 0 auto;
+}
+
 
 
 /* --- STYLES FOR TABLET --- */

@@ -2,37 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Check out the most well known asteroids in our solar system." />
+  <meta name="description" content="Check out the asteroids visited by spacecrafts." />
   <meta name="keywords" content="asteroid, celestial object, celestial bodies, earth, NASA, space" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles/styles.css" type="text/css" />
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <title>Asteroid of the Day | Well Known Asteroids</title>
+  <title>Asteroid of the Day | Asteroids Visited by Spacecrafts</title>
 
 </head>
 <body>
   <div id="bg" class="wellknown-bg"></div>
   <div id="filter"></div>
+  <div id="zoom">
+    <a id="close"></a>
+    <div id="img"></div>
+  </div>
+
 
   <!-- Background element -->
   <ul class="nav-list">
     <li>
-      <a id="sun" class="nav-element"><span id="bg-cap">Check out the background-picture</span></a>
+      <a id="sun" class="nav-element"><span id="bg-cap"><p>Check out the background-picture</p></span></a>
     </li>
     <li>
-      <div id="bg-expl-container">
-        <i id="x"></i>
+      <a id="x" class="nav-element"><span><p>Click for explanation</p></span></a>
+        <div id="bg-expl-container">
         <div id="bg-box">
           <p>
-            This image is retrieved from NASA's
-            <a href="https://apod.nasa.gov" target="_blank" title="Opens in new tab">APoD (2013 August 12th)</a>,
-            and shows the orbits of the nearly 1,500 known Potentially Hazardous Asteroids (PHA's) in our solar system.
-            PHA's are considered by <a href="https://cneos.jpl.nasa.gov/about/neo_groups.html" target="_blank" title="Opens in new tab">NASA</a>
-             to be asteroids within a certain distance (specifically <a class="tip">0.05 AU <span>7,479,893.54 km<br /> 4,647,790.36 miles</span></a>) and with an
-            <a class="tip">absolute magnitude (H)<span>Measure of a celestial object's luminosity (total amount of energy emitted per unit time).</span></a>
-            less than or equal to 22.0. If an asteroid does not fulfill at least one of these requirements, it's not considered a PHA.
-
-            Read more about <a href="https://apod.nasa.gov/apod/ap130812.html" target="_blank" title="Opens in new tab">here</a>.
+            <a href="https://dawn.jpl.nasa.gov/multimedia/images/image-detail.html?id=PIA21469" target="_blank" title="Opens in new tab">This picture</a> shows
+            one of our solar system's dwarf planets, <a href="https://solarsystem.nasa.gov/planets/dwarf-planets/ceres/overview/" target="_blank" title="Opens in new tab">Ceres</a>.
+            Ceres was known as an asteroid until 2006, but was then reclassified as a dwarf
+            planet due to its size. This picture was taken by <a href="https://dawn.jpl.nasa.gov/" target="_blank" title="Opens in new tab">Dawn</a> during
+            its misson to Ceres where it arrived in 2015.
           </p>
         </div>
       </div>
@@ -41,20 +43,176 @@
 
 <div id="content">
   <header>
+    <div id="top-nav">
+      <div id="hamburger">
+        <span id="bar-1"></span>
+        <span id="bar-2"></span>
+        <span id="bar-3"></span>
+      </div>
+    </div>
     <nav id="main-nav">
       <ul>
-        <li><a id="home" class="nav-element" href="index.html"><span>Home</span></a></li>
-        <li><a id="mercury" class="nav-element" href="asteroid-of-the-day.html"><span>Today's asteroid</span></a></li>
-        <li><a id="venus" class="nav-element" href="well-known-asteroids.html"><span>Well known asteroids</span></a></li>
-        <li><a id="earth" class="nav-element" href="planetary-defense.html"><span>How do we defend our planet?</span></a></li>
-        <li><a id="mars" class="nav-element" href="discover.html"><span>Discover more asteroids</span></a></li>
-        <li><a id="jupiter" class="nav-element" href="#"><span>Another page</span></a></li>
+        <li><a id="home" class="nav-element" href="index.html"><span><p>Home</span></p></a></li>
+        <li><a id="mercury" class="nav-element" href="asteroid-of-the-day.html"><span><p>Today's asteroid</p></span></a></li>
+        <li><a id="venus" class="nav-element" href="discover.html"><span><p>Discover more approaching asteroids</p></span></a></li>
+        <li><a id="earth" class="nav-element" href="planetary-defense.html"><span><p>How do we defend our planet?</p></span></a></li>
+        <li><a id="mars" class="nav-element" href="asteroid-belt.html"><span><p>Learn more about the asteroid belt</p></span></a></li>
+        <li><a id="jupiter" class="nav-element" href="well-known-asteroids.html"><span><p>Asteroids visited by spacecrafts</p></span></a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+    <h1>Asteroids visited by spacecrafts</h1>
+    <div class="distribute-container">
+      <div class="asteroid-container">
+        <a href="https://dawn.jpl.nasa.gov/science/ceres.html" target="_blank" title="Opens in new tab"><h2>1 Ceres (dwarf planet)</h2></a>
+        <i id="ceres" class="asteroid-img"></i>
+          <p>
+            Ceres was the first asteroid to be discovered in 1801 by the Italian
+            astronomer Giuseppe Piazzi. It was at that time considered to be a new planet,
+            but was later reclassified as an asteroid only to be reclassified again in
+            2006 as a dwarf planet. Ceres has a diameter approximately
+            950 km (590 miles), and is thereby the biggest object in the asteroid belt.
+            <br/>
+            <br/>
+            The spacecraft <a href="https://dawn.jpl.nasa.gov/" target="_blank" title="Opens in new tab">Dawn</a> (launched September 27, 2007)
+            visited Ceres in 2015 after its mission to Vesta.
+          </p>
+      </div>
 
+      <div class="asteroid-container">
+        <a href="https://dawn.jpl.nasa.gov/science/vesta.html" target="_blank" title="Opens in new tab"><h2>4 Vesta</h2></a>
+        <i id="vesta" class="asteroid-img"></i>
+          <p>
+            Vesta is the second most massive (but not the second largest - Pallas is the second largest by volume)
+             asteroid in the asteroid belt. It was discovered in 1807 by Heinrich Wilhelm Olbers, and was the fourth asteroidData
+             to be discovered.
+             <br/>
+             <br/>
+             Vesta's longest diameter is about 530 km (329 miles), and it has the shape of a
+             smooshed sphere.
+             <br/>
+             <br/>
+            <a href="https://dawn.jpl.nasa.gov/" target="_blank" title="Opens in new tab">Dawn</a> arrived at Vesta in July 2011.
+          </p>
+      </div>
+
+      <div class="asteroid-container">
+        <a href="http://sci.esa.int/rosetta/47389-21-lutetia/" target="_blank" title="Opens in new tab"><h2>21 Lutetia</h2></a>
+        <i id="lutetia" class="asteroid-img"></i>
+          <p>
+            Lutetia was discovered in 1852 by Hermann Mayer Salomon Goldschmidt in France.
+            It has a irregular shape where its longest diameter is about 132 km, while the smallest
+            measures about 76 km.
+            <br/>
+            <br/>
+            In July 2010, ESA's <a href="http://sci.esa.int/rosetta/" target="_blank" title="Opens in new tab">Rosetta</a>
+            spacecraft flew by Lutetia on its way to the
+            comet <a href="http://www.esa.int/Our_Activities/Space_Science/Rosetta/Comet_67P_Churyumov-Gerasimenko" target="_blank" title="Opens in new tab">67P/Churyumov-Gerasimenko</a>.
+          </p>
+      </div>
+
+      <div class="asteroid-container">
+        <a href="https://solarsystem.nasa.gov/small-bodies/asteroids/243-ida/in-depth/" target="_blank" title="Opens in new tab"><h2>243 Ida</h2></a>
+        <i id="ida" class="asteroid-img"></i>
+          <p>
+            243 Ida was discovered in 1884 by Johann Palisa, an Austrian astronomer, in Vienna.
+            At the time it was not known that Ida had its own moon, Dactyl was not discovered until
+            100 years later, in 1993, when it became the second asteroid to be visited by a spacecraft.
+            <br/>
+            <br/>
+            On August 29, 1993 <a href="https://www.jpl.nasa.gov/missions/galileo/" target="_blank" title="Opens in new tab">Galileo</a> flew by Ida on its way to Jupiter after it passed
+            Gaspra two years before.
+          </p>
+      </div>
+
+      <div class="asteroid-container">
+        <a href="https://solarsystem.nasa.gov/small-bodies/asteroids/253-mathilde/in-depth/" target="_blank" title="Opens in new tab"><h2>253 Mathilde</h2></a>
+        <i id="mathilde" class="asteroid-img"></i>
+          <p>
+            Mathilde was discovered in 1885 by Johann Palisa. Its diameter is about 52 km (32 miles)
+            and because of its high concentration of carbon, the asteroid is very dark - it reflects
+            only 4 percent of all incoming light.
+            <br/>
+            <br/>
+            In 1997 <a href="https://solarsystem.nasa.gov/missions/near-shoemaker/in-depth/" target="_blank" title="Opens in new tab">NEAR</a>
+            flew by Mathilde on its way to the asteroid 433 Eros, and people
+          </p>
+      </div>
+
+      <div class="asteroid-container">
+        <a href="https://solarsystem.nasa.gov/small-bodies/asteroids/433-eros/in-depth/" target="_blank" title="Opens in new tab"><h2>433 Eros</h2></a>
+        <i id="eros" class="asteroid-img"></i>
+          <p>
+            Eros was discovered in 1898 by both Gustav Witt in Germany and Auguste H.P
+            Charlois in France (independently of each other). It was the first Near Earth asteroid
+            to be discovered, and also the first asteroid to be orbited by a spacecraft.
+            <br/>
+            <br/>
+            <a href="https://solarsystem.nasa.gov/missions/near-shoemaker/in-depth/" target="_blank" title="Opens in new tab">NEAR</a> flew by Eros in December 1998 where it
+            moved into orbit 2 years after its arrival.
+            After a year in orbit, the spacecraft finally performed the very first landing on
+            an asteroid.
+          </p>
+      </div>
+
+      <div class="asteroid-container">
+        <a href="http://solarviews.com/eng/gaspra.htm" target="_blank" title="Opens in new tab"><h2>951 Gaspra</h2></a>
+        <i id="gaspra" class="asteroid-img"></i>
+          <p>
+            Gaspra was discovered in 1916 by Grigoriy N. Neujamin. Gaspras largest diameter
+            is about 20 km (12.5 miles). It was given very little attention until
+            <a href="https://www.jpl.nasa.gov/missions/galileo/" target="_blank" title="Opens in new tab">Galileo's</a>
+            trajectory was discovered to be close to the asteroid.
+            <br/>
+            <br/>
+            In 1991, Galileo flew by Gaspra as the first spacecraft to fly by an asteroid before it later
+            flew by 243 Ida in 1993 and finally reached Jupiter in 1995.
+          </p>
+      </div>
+      <!--
+      <div class="asteroid-container">
+        <a href="" target="_blank" title="Opens in new tab"><h2>4179 Toutatis</h2></a>
+        <i id="toutatis" class="asteroid-img"></i>
+          <p>
+
+          </p>
+      </div>
+
+      <div class="asteroid-container">
+        <a href="" target="_blank" title="Opens in new tab"><h2>5535 Annefrank</h2></a>
+        <i id="annefrank" class="asteroid-img"></i>
+          <p>
+
+          </p>
+      </div>
+
+      <div class="asteroid-container">
+        <a href="" target="_blank" title="Opens in new tab"><h2>2867 Šteins</h2></a>
+        <i id="steins" class="asteroid-img"></i>
+          <p>
+
+          </p>
+      </div>
+
+      <div class="asteroid-container">
+        <a href="" target="_blank" title="Opens in new tab"><h2>9969 Braille</h2></a>
+        <i id="braille" class="asteroid-img"></i>
+          <p>
+
+          </p>
+      </div>
+
+      <div class="asteroid-container">
+        <a href="https://solarsystem.nasa.gov/small-bodies/asteroids/25143-itokawa/in-depth/" target="_blank" title="Opens in new tab"><h2>25143 Itokawa</h2></a>
+        <i id="itokawa" class="asteroid-img"></i>
+          <p>
+            Itokawa was discovered in 1998 by the NEA Research Team at Socorro in New Mexico.
+
+          </p>
+      </div>-->
+    </div>
   </main>
 
   <footer>

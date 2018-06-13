@@ -4,34 +4,32 @@
   <meta charset="utf-8" />
   <meta name="description" content="Check out the nearest asteroid of today! Data retrieved from NASA." />
   <meta name="keywords" content="asteroid, celestial object, celestial bodies, earth, NASA, space, planetary defense" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles/styles.css" type="text/css" />
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <title>Asteroid of the Day | The Asteroid Belt</title>
 </head>
 <body>
-  <div id="bg" class="planetary-bg"></div>
+  <div id="bg" class="belt-bg"></div>
   <div id="filter"></div>
 
   <!-- Background element -->
   <ul class="nav-list">
     <li>
-      <a id="sun" class="nav-element"><span id="bg-cap">Check out the background-picture</span></a>
+      <a id="sun" class="nav-element"><span id="bg-cap"><p>Check out the background-picture</p></span></a>
     </li>
     <li>
-      <div id="bg-expl-container">
-        <i id="x"></i>
+      <a id="x" class="nav-element"><span><p>Click for explanation</p></span></a>
+        <div id="bg-expl-container">
         <div id="bg-box">
           <p>
-            This image is retrieved from NASA's
-            <a href="https://apod.nasa.gov" target="_blank" title="Opens in new tab">APoD (2013 August 12th)</a>,
-            and shows the orbits of the nearly 1,500 known Potentially Hazardous Asteroids (PHA's) in our solar system.
-            PHA's are considered by <a href="https://cneos.jpl.nasa.gov/about/neo_groups.html" target="_blank" title="Opens in new tab">NASA</a>
-             to be asteroids within a certain distance (specifically <a class="tip">0.05 AU <span>7,479,893.54 km<br /> 4,647,790.36 miles</span></a>) and with an
-            <a class="tip">absolute magnitude (H)<span>Measure of a celestial object's luminosity (total amount of energy emitted per unit time).</span></a>
-            less than or equal to 22.0. If an asteroid does not fulfill at least one of these requirements, it's not considered a PHA.
-
-            Read more about <a href="https://apod.nasa.gov/apod/ap130812.html" target="_blank" title="Opens in new tab">here</a>.
+            <a href="https://www.nasa.gov/mission_pages/WISE/multimedia/pia12469.html" target="_blank" title="Opens in new tab">This diagram</a> shows
+            the asteroid belt including three of the planets in our solar system (Jupiter in purple orbit, Mars in red, Earth in blue). The red
+            dots are Near Earth Objects (NEO's), while the green dots represents populations of asteroids.
+            The yellow dots are populations of asteroids that <a href="https://www.nasa.gov/mission_pages/WISE/main/index.html" target="_blank" title="Opens in new tab">WISE</a> was
+            expected to see when it was launched in 2009. WISE did asteroid searches during its mission from 2009-2011, and was thereafter
+            deactivated until it was reactivated in 2013 for the purpose of looking for NEO's, thereby renamed as <a href="https://www.nasa.gov/mission_pages/neowise/main/index.html" target="_blank" title="Opens in new tab">NEOWISE</a>.
           </p>
         </div>
       </div>
@@ -40,20 +38,70 @@
 
 <div id="content">
   <header>
+    <div id="top-nav">
+      <div id="hamburger">
+        <span id="bar-1"></span>
+        <span id="bar-2"></span>
+        <span id="bar-3"></span>
+      </div>
+    </div>
     <nav id="main-nav">
       <ul>
-        <li><a id="home" class="nav-element" href="index.html"><span>Home</span></a></li>
-        <li><a id="mercury" class="nav-element" href="asteroid-of-the-day.html"><span>Today's asteroid</span></a></li>
-        <li><a id="venus" class="nav-element" href="well-known-asteroids.html"><span>Well known asteroids</span></a></li>
-        <li><a id="earth" class="nav-element" href="planetary-defense.html"><span>How do we defend our planet?</span></a></li>
-        <li><a id="mars" class="nav-element" href="discover.html"><span>Discover more asteroids</span></a></li>
-        <li><a id="jupiter" class="nav-element" href="#"><span>Another page</span></a></li>
+        <li><a id="home" class="nav-element" href="index.html"><span><p>Home</span></p></a></li>
+        <li><a id="mercury" class="nav-element" href="asteroid-of-the-day.html"><span><p>Today's asteroid</p></span></a></li>
+        <li><a id="venus" class="nav-element" href="discover.html"><span><p>Discover more approaching asteroids</p></span></a></li>
+        <li><a id="earth" class="nav-element" href="planetary-defense.html"><span><p>How do we defend our planet?</p></span></a></li>
+        <li><a id="mars" class="nav-element" href="asteroid-belt.html"><span><p>Learn more about the asteroid belt</p></span></a></li>
+        <li><a id="jupiter" class="nav-element" href="well-known-asteroids.html"><span><p>Asteroids visited by spacecrafts</p></span></a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+    <h1>What is the Asteroid Belt?</h1>
+    <div class="belt-content">
+      <p>
+        When our solar system was just born, dust and rock were orbiting the sun clumping together as a result of
+        gravitational forces between the masses. Some gravitational forces became strong enough to form planets, whereas
+        a region between Mars and Jupiter remained as what is today known as the asteroid belt.
+        <br/>
+        <br/>
 
+        <a href="https://solarsystem.nasa.gov/small-bodies/asteroids/in-depth/" target="_blank" title="Opens in new tab">NASA claims</a>
+        that the total mass of the asteroids in this region is less than the mass of Earth's Moon. Considering the enormous space they
+        live in (the <a href="https://theplanets.org/distances-between-planets/" target="_blank" title="Opens in new tab">distance between Mars and Jupiter</a> is
+        approximately <a class="tip">3.68 AU <span>550,390,000 km<br /> 342,012,346 miles</span></a>!),
+        you can probably (not even) imagine the distance between each of them. Still, it happens quite often that they bump into
+        one another and also into planets. Check out the page on <a href="planetary-defense.html">planetary defense</a> if
+        you want to know more about how NASA works to defend our own planet from impacts with celestial objects.
+      </p>
+
+        <h3>Here's a short video about asteroids
+          (posted by <a href="https://www.youtube.com/channel/UCX6b17PVsYBQ0ip5gyeme-Q" target="_blank" title="Opens in new tab">CrashCourse</a>)</h3>
+      <iframe class="video" src="https://www.youtube.com/embed/auxpcdQimCs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+        <h3>Classifications of Asteroids</h3>
+        <p>
+        One type of classification of asteroids is due to their position in our solar system.
+        The majority of the asteroids we know are located in orbit in what we call the Main Asteroid Belt.
+        The Main Asteroid Belt is the area between Mars and Jupiter.
+        <br/><br/>
+        Another group of asteroids is the Trojans. Trojans share orbit with a larger planet where the trojan's position to the planet
+        remains stable. This happens because they gather around the <a href="https://www.nasa.gov/missions/solarsystem/f-lagrange.html" target="_blank" title="Opens in new tab">Lagrangian points</a> of
+        the orbit, where the
+        gravitational pull from the two objects maintain the asteroid's position relative to the two objects.
+        <br/><br/>
+        Near-Earth Asteroids is the last classification group due to asteroid's position,
+        and are considered to be asteroids that pass close to Earth.
+        <br/><br/>
+        Due to asteroids' chemical compositions and reflectivity, there are nine classifications,
+        where there are three main groups, namely C-type (Carbon),
+        S-type (Silicaceous) and M-type (Metallic). C-type asteroids make up 75% of the asteroid belt, S-type 17%. The remaining
+        six groups are rather rare and we call them
+        A-, D-, E-, P-, Q- and R-type.
+      </p>
+    </div>
+    <a id="to-top" href="#content" title="Back to top"></a>
   </main>
 
   <footer>

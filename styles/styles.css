@@ -130,42 +130,44 @@ ul.nav-list li{
 
 #x{
   display: block;
-  width: 1.5rem;
-  height: 1.5rem;
-  background: url('../icons/x.svg') no-repeat;
+  width: 2rem;
+  height: 2rem;
+  background: url('../icons/o.svg') no-repeat;
   position: absolute;
-  top: 5rem;
-  left: 5rem;
+  top: 3rem;
+  left: 3rem;
   z-index: 1000;
   opacity: 0;
+  cursor: pointer;
 }
 #bg-box{
-  display: none;
+  display: block;
   width: 20rem;
   height: auto;
   position: absolute;
-  top: 7rem;
-  left: 7rem;
+  top: 0;
+  left: 0;
   background-color: rgba(0,0,0,0.75)/*rgba(32,66,84,0.75)*/;
   border: 0.05rem solid rgba(32,66,84,0.75);
-  z-index: 999;
+  z-index: 1001;
 }
-/*#bg-expl-container{
+#bg-expl-container{
+  display: none;
   width: 22rem;
   height: 20rem;
   position: absolute;
-  top: 5rem;
-  left: 5rem;
-} */
+  top: 6rem;
+  left: 6rem;
+}
 
 a.nav-element span{
   display: none;
   width: 22rem;
-  padding: 0.5rem;
+  padding: 0rem;
   position: absolute;
   top: 0;
   left: 2.5rem;
-  z-index: 999;
+  z-index: 9999;
 }
 a.nav-element span p{
   display: inline-block;
@@ -190,25 +192,26 @@ a{
   position: relative;
 }
 a.tip{
+  position: relative;
   border-bottom: 1px dashed #FFEF00;
 }
 a.tip:hover{
-  position: relative;
-}
+  border-bottom: 1px dashed #FFEF00;
+
+  }
 a.tip span{
   display: none;
-}
-a.tip:hover span{
-  display: block;
+  position: absolute;
   min-width: 10em;
   padding: 0.5rem;
   background-color: black;
   border: 0.05rem solid #204254;
   color: white;
-  position: absolute;
   z-index: 999;
 }
-
+a.tip:hover span{
+  display: inline-block;
+}
 p a:hover{
   border-bottom: 0.05rem solid #FFEF00;
 }
@@ -262,6 +265,7 @@ a:visited{
   -moz-transition: background-color 0.5s;
   -webkit-transition: background-color 0.5s;
   opacity: 0;
+  z-index: 9999;
 }
 
 #to-top:hover{
@@ -318,7 +322,7 @@ footer a:after{
   position: fixed;
   top: 0;
   left: 0;
-  background: url('../bg-images/asteroids.jpg') no-repeat;
+  background: url('../bg-images/potentially-hazardous-asteroids.jpg') no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
@@ -375,88 +379,6 @@ footer a:after{
 }
 
 
-/* "Discover more asteroids" Section
-
-#bottom-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  width: 100%;
-  height: 40rem;
-  opacity: 0.15;
-}
-/*
-#discover{
-  position: absolute;
-  top: 2.5em;
-  left: 1.5rem;
-  margin: 0;
-}
-.hover-container{
-  display: block;
-  width: 60%;
-  height: 20%;
-  position: relative;
-  border-radius: 50%;
-  padding: 1.5rem;
-  margin: 0 auto;
-  background-color: rgba(33,37,83,0.75);
-}
-
-.hover-container i{
-  display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin: -1rem;
-  width: 2rem;
-  height: 2rem;
-  background: url('../icons/x.svg');
-}
-.hover-container i:hover{
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.deg0, #xbox1{ transform: rotate(0) translate(15rem) rotate(0);}
-.deg45, #xbox2{ transform: rotate(45deg) translate(15rem) rotate(-45deg);}
-.deg90, #xbox3{ transform: rotate(90deg) translate(15rem) rotate(-90deg);}
-.deg135, #xbox4{ transform: rotate(135deg) translate(15rem) rotate(-135deg);}
-.deg180, #xbox5{ transform: rotate(180deg) translate(15rem) rotate(-180deg);}
-.deg225, #xbox6{ transform: rotate(225deg) translate(15rem) rotate(-225deg);}
-.deg270, #xbox7{ transform: rotate(270deg) translate(15rem) rotate(-270deg);}
-.deg315, #xbox8{ transform: rotate(315deg) translate(15rem) rotate(-315deg);}
-
-#xbox1, #xbox2, #xbox3, #xbox4, #xbox5, #xbox6, #xbox7, #xbox8, #bg-box{
-  display: block;
-  width: 20rem;
-  height: auto;
-  background-color: rgba(0,0,0,0.75)/*rgba(32,66,84,0.75)/;
-  border: 0.05rem solid rgba(32,66,84,0.75);
-  z-index: 999;
-}
-#xbox1, #xbox2, #xbox8{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-}
-#xbox3, #xbox7{
-  position: absolute;
-  top: 50%;
-  left: 39%
-}
-#xbox4, #xbox5, #xbox6{
-  position: absolute;
-  top: 50%;
-  right: 50%;
-}
-
-
-*/
-
-
 /* ASTEROID OF THE DAY DETAILS PAGE */
 
 .asteroid-bg{
@@ -466,7 +388,7 @@ footer a:after{
   position: fixed;
   top: 0;
   left: 0;
-  background: url('../bg-images/asteroid-details.jpg') no-repeat;
+  background: url('../bg-images/the-snowman-vesta.jpg') no-repeat;
   background-size: cover;
   z-index: -999;
 }
@@ -495,6 +417,23 @@ footer a:after{
 #timeline h3{
   border-bottom: 1px solid rgba(43,127,153,0.75);
 }
+.date{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center; 
+}
+.toside{
+  width: 1rem;
+  height: 1rem;
+  background: url('../icons/toside.svg') top right no-repeat;
+  padding-left: 0.5rem;
+}
+.down{
+  width: 1rem;
+  height: 1rem;
+  background: url('../icons/down.svg') no-repeat;
+}
 #timeline li{
   cursor: pointer;
 }
@@ -517,8 +456,8 @@ footer a:after{
   position: fixed;
   top: 0;
   left: 0;
-  background: url('../bg-images/discover.jpg') no-repeat;
-  background-size: cover;
+  background: url('../bg-images/ida-and-dactyl-galileo.jpg') top center no-repeat;
+  background-size: auto 100%;
   z-index: -999;
 }
 
@@ -547,7 +486,7 @@ footer a:after{
   width: 100%;
   height: 100%;
   position: fixed;
-  background: url('../bg-images/earth.jpg') top right no-repeat;
+  background: url('../bg-images/earth-junocam.jpg') top right no-repeat;
   background-size: cover;
   z-index: -999;
 }
@@ -559,15 +498,13 @@ footer a:after{
   align-items: center;
   width: 40rem;
   margin: 1.5rem auto;
-  padding: 1.5rem;
+  padding: 0.5rem;
   background-color: rgba(0,0,0,0.75);
 }
 .planetary-content ul{
   list-style: none;
 }
 
-.planetary-content ul li{
-}
 .video{
    width: 560px;
    height: 315px;
@@ -580,9 +517,112 @@ footer a:after{
   width: 100%;
   height: 100%;
   position: fixed;
-  background: url('../bg-images/belt.jpg') top right no-repeat;
-  background-size: cover;
+  background: url('../bg-images/asteroid-belt-diagram.jpg') top center no-repeat;
+  background-size: auto 100%;
   z-index: -999;
+}
+
+/* WELL KNOWN ASTEROIDS */
+.wellknown-bg{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: url('../bg-images/ceres-craters-dawn.jpg') top center no-repeat;
+  background-size: auto 100%;
+  z-index: -999;
+}
+
+.distribute-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 70%;
+  justify-content: space-between;
+  margin: 1.5rem auto;
+}
+.asteroid-container{
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  padding: 0.5rem;
+  margin: 1.5rem auto;
+  background-color: rgba(0,0,0,0.75);
+  margin: 1.5rem auto;
+  border: 0.05rem solid #204254;
+
+}
+.asteroid-container h2{
+  padding-left: 2rem;
+}
+.asteroid-container p{
+  width: 15rem;
+  align-self: center;
+}
+.asteroid-img{
+  width: 15rem;
+  height: 15rem;
+  border: 0.05rem solid rgba(75,162,206,1.0);
+  margin: 0.5rem;
+  align-self: center;
+}
+
+/*
+#zoom{
+  display: none;
+  width: 80%;
+  height: 50%;
+  padding: 1.5rem;
+  position: fixed;
+  top: 10%;
+  background: rgba(0,0,0,0.75);
+  margin: 25% 10% 25% 10%;
+  z-index: 9999;
+}
+#img{
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  margin: 1.5rem auto;
+  background-size: contain;
+}
+#close{
+  width: 2rem;
+  height: 2rem;
+  background: url('../icons/x.svg') no-repeat;
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+*/
+#ceres{
+  background: url('../images/ceres-dawn.jpg') center no-repeat;
+  background-size: cover;
+}
+#vesta{
+  background: url('../images/vesta-dawn.jpg') center no-repeat;
+  background-size: cover;
+}
+#ida{
+  background: url('../images/ida-and-dactyl-galileo.jpg') center no-repeat;
+  background-size: cover;
+}
+#lutetia{
+  background: url('../images/lutetia-rosetta.jpg') center no-repeat;
+  background-size: cover;
+}
+#mathilde{
+  background: url('../images/mathilde-near.jpg') center no-repeat;
+  background-size: cover;
+}
+#eros{
+  background: url('../images/eros-near.jpg') center no-repeat;
+  background-size: cover;
+}
+#gaspra{
+  background: url('../images/gaspra-galileo.jpg') center no-repeat;
+  background-size: cover;
 }
 
 /* --- ABOUT --- */
@@ -594,8 +634,8 @@ footer a:after{
   position: fixed;
   top: 0;
   left: 0;
-  background: url('../bg-images/about.jpg') no-repeat;
-  background-size: 100% auto;
+  background: url('../bg-images/ceres-juling-crater-dawn.jpg') top center no-repeat;
+  background-size: cover;
   z-index: -999;
 }
 
@@ -605,11 +645,12 @@ footer a:after{
   width: 40rem;
   height: auto;
   margin: 0 auto;
-  background-color: rgba(32,66,84,0.75);
+  padding: 0.5rem;
+  background-color: rgba(0,0,0,0.75);
 }
-  #about-content p{
-    padding: 2.5rem auto;
-  }
+#about-content p{
+  padding: 2.5rem auto;
+}
 .sign{
   text-align: right;
   margin: 0rem 2.5rem 1.5rem 1.5rem;
@@ -623,7 +664,7 @@ footer a:after{
   position: fixed;
   top: 0;
   left: 0;
-  background: url('../bg-images/contact.jpg') no-repeat;
+  background: url('../bg-images/hubble-telescope-earth-horizon.jpg') top center no-repeat;
   background-size: cover;
   z-index: -999;
 }
@@ -733,25 +774,248 @@ input[type="submit"]:hover, input[type="submit"]:active{
 
 
 /* --- STYLES FOR TABLET --- */
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1024px){
 
-  /* CREATE HAMBURGER MENU */
+  main{
+    padding-top: 3.5rem;
+  }
+  ul.nav-list{
+  position: fixed;
+  top: 0;
+  left: 3rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 1003;
+}
+ul.nav-list span{
+  display: block;
+  padding: 0;
+  font-size: 0.8rem;
+}
+#sun{
+  position: fixed;
+  top: 0.5rem;
+  left: 5rem;
+}
+#x{
+  position: fixed;
+  top: 3rem;
+  left: 5rem;
+}
 
+#bg-expl-container{
+  position: absolute;
+  top: 6rem;
+  left: 3rem;
+  width: 100%;
+  padding: 0;
+}
+
+  /* HAMBURGER MENU */
+
+  #top-nav{
+    width: 100%;
+    height: 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.75);
+    z-index: 1002;
+  }
+  #hamburger{
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    top: 0.5rem;
+    left: 1.5rem;
+    z-index: 1003;
+  }
+  #hamburger span{
+    display: block;
+    width: 100%;
+    height: 0.25rem;
+    margin-top: 0.3rem;
+    background-color:  #FFEF00;
+  }
+  .change-1{
+    -webkit-transform: rotate(-45deg) translate(-0.3rem, 0.5rem);
+    transform: rotate(-45deg) translate(-0.3rem, 0.5rem);
+  }
+  .change-2{
+    opacity: 0;
+  }
+  .change-3{
+    -webkit-transform: rotate(45deg) translate(-0.3rem, -0.47rem);
+    transform: rotate(45deg) translate(-0.3rem, -0.47rem);
+  }
+  #main-nav{
+    display: none;
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 3rem;
+    margin: 0;
+    padding: 10% 1.5rem;
+    background-color: rgba(0,0,0,0.85);
+    z-index: 1003;
+  }
+  #main-nav a{
+    height: 2rem;
+    width: 2rem;
+  }
+  #main-nav a span{
+    display: block;
+    position: relative;
+
+  }
+  #main-nav p{
+    background-color: rgba(0,0,0,0);
+    padding: 0;
+    font-size: 0.9rem;
+  }
+
+  a.tip span{
+    display: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  /* INDEX PAGE */
   .asteroid-box{
     width: 350px;
   }
+
+  /* WELL KNOWN ASTEROIDS PAGE */
+
+  /*#zoom{
+    width: 80%;
+    height: 100%;
+    padding: 1.5rem;
+    position: fixed;
+    top: 0;
+    margin: 1.5rem auto;
+  }
+  */
 
 }
 
 /* --- STYLES FOR SMARTPHONE --- */
 @media screen and (max-width: 600px){
 
+  /* GLOBAL */
+
+  #hamburger{
+   position: fixed;
+   left: 0.5rem;
+  }
+  #main-nav{
+    width: 100%;
+    padding: 25% 0.5rem;
+  }
+  #main-nav p{
+    font-size: 0.8rem;
+  }
+  #bg-expl-container{
+    width: 100%;
+    position: fixed;
+    left: 0;
+  }
+  #bg-box{
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+  }
+  #sun{
+    position: fixed;
+    left: 3.5rem;
+  }
+  #x{
+    position: fixed;
+    left: 3.5rem;
+  }
+
   h1{ font-size: 1.5rem; }
   h2{ font-size: 1.3rem; }
 
-  .asteroid-box{
-    width: 70%;
+
+  a:active{
+    background-color: rgba(32,66,84,0.75);
+  }
+  footer ul{
     padding: 0;
+    width: 100%;
+    margin: 1rem auto;
+    text-align: center;
+  }
+  footer ul li{
+    display: inline-block;
+    padding: 0 0.7rem 0 0.7rem;
+  }
+  footer p{
+    text-align: center;
+    font-size: 0.9rem;
   }
 
+  .video{
+    width: 100%;
+    height: auto;
+  }
+
+  /* INDEX PAGE */
+
+  .index-container{
+    width: 100%;
+    margin: 0 auto;
+  }
+    #top-container{
+      width: inherit;
+    }
+  .asteroid-box{
+    display: block;
+    width: 90%;
+  }
+
+  /* ASTEROID OF THE DAY DETAILS PAGE */
+  .details-content{
+    width: 90%;
+    padding: 0;
+  }
+  #details{
+    padding: 0.5rem;
+  }
+
+  /* DISCOVER PAGE */
+  #asteroids-list{
+    width: 90% !important;
+    padding: 0 !important;
+  }
+
+  /* PLANETARY DEFENSE PAGE */
+  .planetary-content{
+    width: 90%;
+  }
+  .planetary-content ul{
+    padding: 1rem;
+  }
+
+  /* ASTEROID BELT PAGE*/
+  .belt-content{
+    width: 90%;
+  }
+
+  /* ABOUT PAGE */
+  #about-content{
+    width: 90%;
+  }
+
+  /* CONTACT PAGE */
+  fieldset{
+    width: 90%;
+    padding: 0.5rem;
+  }
+  input[type="text"]{
+    width: 100%;
+  }
 }

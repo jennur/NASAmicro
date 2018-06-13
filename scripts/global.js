@@ -22,6 +22,18 @@ var bgBox = document.getElementById('bg-box');
 var x = document.getElementById('x');
 
 
+x.onclick = function(){
+  if( bgExplContainer.style.display === "none"){
+    bgExplContainer.style.display = "block";
+    x.innerHTML = "<span><p>Hide explanation</p></span>";
+  }
+  else{
+    bgExplContainer.style.display = "none";
+    x.innerHTML = "<span><p>Click for explanation</p></span>";
+  }
+};
+
+
 sun.onclick = function(){
   var content = document.getElementById('content');
   var filter = document.getElementById('filter');
@@ -34,13 +46,15 @@ sun.onclick = function(){
         bg.style.zIndex = "999";
         clearInterval(timer);
           /* Event listener for displaying background-explanation element*/
-            x.onmouseover = function(){
-              bgBox.style.display = "block";
-            };
-            document.getElementById('bg-cap').innerHTML = "Bring back the content";
-            bgBox.onmouseleave = function(){
-              bgBox.style.display = "none";
-            };
+            /*x.onclick = function(){
+              if( bgExplContainer.style.display = "none"){
+                bgExplContainer.style.display = "block";
+              }
+              else{
+                bgExplContainer.style.display = "none";
+              }
+            };*/
+            document.getElementById('bg-cap').innerHTML = "<p>Bring back the content</p>";
         }
 
       content.style.opacity = opacity;
@@ -59,8 +73,10 @@ sun.onclick = function(){
 
       if(opacity >= 1){
         clearInterval(timer);
-        document.getElementById('bg-cap').innerHTML = "Check out the background-picture";
-        x.onmouseover = function(){null};
+        document.getElementById('bg-cap').innerHTML = "<p>Check out the background-picture</p>";
+      }
+      if( bgExplContainer.style.display = "block"){
+        bgExplContainer.style.display = "none";
       }
       content.style.opacity = opacity;
       filter.style.opacity = opacity;
@@ -69,11 +85,32 @@ sun.onclick = function(){
     }, 30);
   }
 }
-
-
-
-
 /* Thanks to https://leewc.com/articles/javascript-fade-in-out-callback/ for code inspo*/
+
+/* Hamburger menu */
+
+var burger = document.getElementById('hamburger');
+
+burger.onclick = function(){
+  var nav = document.getElementById('main-nav');
+  var bar1 = document.getElementById('bar-1');
+  var bar2 =  document.getElementById('bar-2');
+  var bar3 =  document.getElementById('bar-3');
+
+  if(nav.style.display ==="none"){
+    nav.style.display = 'block';
+    document.getElementById('bar-1').classList.add('change-1');
+    document.getElementById('bar-2').classList.add('change-2');
+    document.getElementById('bar-3').classList.add('change-3');
+  }
+  else{
+    nav.style.display = 'none';
+    document.getElementById('bar-1').classList.remove('change-1');
+    document.getElementById('bar-2').classList.remove('change-2');
+    document.getElementById('bar-3').classList.remove('change-3');
+  }
+}
+
 
 /* Back to top button */
 window.onscroll = function(){

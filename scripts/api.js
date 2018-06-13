@@ -16,7 +16,8 @@ request.onload = function(){ //creating function to be called when content is lo
     console.log(data);
     var asteroid = data["near_earth_objects"][startDate]["0"];
     var diameter, velocity, distance, absMagn, hazardous, missDist;
-    if(window.location.href.indexOf("index") !== -1){
+    var test = /\/asteroidod\/+.+/;
+    if(window.location.href.match(test) === null || window.location.href.indexOf("index") !== -1){
       var asteroidName = document.getElementById('asteroid-name');
       asteroidName.innerHTML = data["near_earth_objects"][startDate]["0"]["name"];
 
@@ -106,7 +107,7 @@ request.onload = function(){ //creating function to be called when content is lo
             var i;
             for(i = 0; i < closeApproach.length; i++){
               var close = document.createElement('li');
-              close.innerHTML = "<h3>" + closeApproach[i].close_approach_date + "</h3>";
+              close.innerHTML = "<h3 class='date'>" + closeApproach[i].close_approach_date + "<i class='toside'></i></h3>";
 
               var hiddenData = document.createElement('ul');
               hiddenData.classList.add('hide-robot');
@@ -228,6 +229,10 @@ return yyyy + '-' + mm + '-' + dd;
 
 //Function for displaying content
 function display(){
-  if(this.childNodes[1].classList.contains('hide-robot')){ this.childNodes[1].classList.remove('hide-robot'); }
-  else{ this.childNodes[1].classList.add('hide-robot') }
+  if(this.childNodes[1].classList.contains('hide-robot')){
+    this.childNodes[1].classList.remove('hide-robot');
+  }
+  else{
+    this.childNodes[1].classList.add('hide-robot');
+  }
 }

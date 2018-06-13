@@ -19,6 +19,7 @@
     }
     else{
       mail($to, $subject, $message, $header);
+      $success = "<p>Your message was sent. Thank you!</p>";
     }
   }
 
@@ -29,6 +30,7 @@
     <meta charset="utf-8" />
     <meta name="description" content="Check out the nearest asteroid of today! Data retrieved from NASA." />
     <meta name="keywords" content="asteroid, celestial object, celestial bodies, earth, NASA, space" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles/styles.css" type="text/css" />
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -45,8 +47,8 @@
         <a id="sun" class="nav-element"><span id="bg-cap"><p>Check out the background-picture</p></span></a>
       </li>
       <li>
-        <div id="bg-expl-container">
-          <i id="x"></i>
+        <a id="x" class="nav-element"><span><p>Click for explanation</p></span></a>
+          <div id="bg-expl-container">
           <div id="bg-box">
             <p>
               <a href="https://images.nasa.gov/details-PIA18165.html" target="_blank" title="Opens in new tab">This image</a> shows the Hubble Telescope against Earth's horizon, and was taken by <a href="https://www.nasa.gov" target="_blank" title="Opens in new tab">NASA</a> in 1997.
@@ -61,6 +63,13 @@
 
   <div id="content">
     <header>
+      <div id="top-nav">
+        <div id="hamburger">
+          <span id="bar-1"></span>
+          <span id="bar-2"></span>
+          <span id="bar-3"></span>
+        </div>
+      </div>
       <nav id="main-nav">
         <ul>
           <li><a id="home" class="nav-element" href="index.html"><span><p>Home</span></p></a></li>
@@ -68,7 +77,7 @@
           <li><a id="venus" class="nav-element" href="discover.html"><span><p>Discover more approaching asteroids</p></span></a></li>
           <li><a id="earth" class="nav-element" href="planetary-defense.html"><span><p>How do we defend our planet?</p></span></a></li>
           <li><a id="mars" class="nav-element" href="asteroid-belt.html"><span><p>Learn more about the asteroid belt</p></span></a></li>
-          <li><a id="jupiter" class="nav-element" href="well-known-asteroids.html"><span><p>Well known asteroids</p></span></a></li>
+          <li><a id="jupiter" class="nav-element" href="well-known-asteroids.html"><span><p>Asteroids visited by spacecrafts</p></span></a></li>
         </ul>
       </nav>
     </header>
@@ -92,6 +101,7 @@
           <p id="message-error" class="hide-robot"></p>
           <input id="submit" type="submit" value="Send!" />
         </form>
+        <?php echo $success; ?>
       </fieldset>
   <!-- Honey pot creds: https://arctek.co.za/simple-honeypot-for-an-html-form/ -->
     </main>
